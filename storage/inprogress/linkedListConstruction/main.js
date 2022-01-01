@@ -14,6 +14,8 @@ const linkedList = new DoublyLinkedList();
 linkedList.head = one;
 linkedList.tail = three;
 
-linkedList.remove(two);
+linkedList.removeNodesWithValue(2);
 
-console.log(one, three);
+console.log(one);
+console.log(two);
+console.log(three);

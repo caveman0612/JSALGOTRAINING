@@ -15,27 +15,36 @@ class DoublyLinkedList {
   }
 
   setHead(node) {
-    // Write your code here.
+    if (this.head == null) this.head = node;
   }
 
   setTail(node) {
     // Write your code here.
   }
 
-  insertBefore(node, nodeToInsert) {
-    // Write your code here.
-  }
+  insertBefore(node, nodeToInsert) {}
 
   insertAfter(node, nodeToInsert) {
     // Write your code here.
   }
 
   insertAtPosition(position, nodeToInsert) {
-    // Write your code here.
+    let counter = 1;
+    let currentNode = this.head;
+    while (!currentNode) {
+      if (counter == position) {
+        nodeToInsert.prev = currentNode.prev;
+      }
+    }
   }
 
   removeNodesWithValue(value) {
-    // Write your code here.
+    let currentNode = this.head;
+    while (currentNode) {
+      const nodeToRemove = currentNode;
+      currentNode = currentNode.next;
+      if (nodeToRemove.value == value) this.remove(nodeToRemove);
+    }
   }
 
   remove(node) {
